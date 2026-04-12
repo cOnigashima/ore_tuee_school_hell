@@ -1,24 +1,27 @@
 # /draft
 
-初稿を執筆する。
+frozen packet と scene 群から draft を起こす。
 
 ## 入力
 
-`backlog/` にあるpitchファイル、または指定されたあらすじ
+- `packets/frozen/*.yaml`
+- `scenes/drafted/`, `scenes/slotted/`, `scenes/merged/`
+- 必要に応じて `story/promises.md`, `bible/`, `approved/`, `published/`
 
 ## 手順
 
-1. 指定されたpitchまたは最新のpitchを読む
-2. `bible/` の設定資料を参照する
-3. `approved/` の直近3話を読み、文体と流れを把握する
-4. 初稿を執筆する
+1. 対象の frozen packet を読み、`purpose / episode_roles / disclose / withhold / guardrails` を確認する
+2. 対象 episode の scene 群を読み、scene の loss / gain / emotional turn を把握する
+3. `bible/rules.md` と直近の `approved/`, `published/` を読み、文体と handoff を合わせる
+4. `drafts/` に episode 単位の draft を書く
+5. draft から packet / scene へのトレースが残るようにする
 
 ## 執筆ルール
 
 - `bible/rules.md` の文体・禁則に従う
-- 一話あたり3000-5000字を目安
-- 冒頭で前話との繋がりを意識する
-- 末尾で次話への引きを作る
+- `withhold` にある情報は前倒しで明かさない
+- 冒頭は `hook_in` を受け、末尾は `cliffhanger` を返す
+- scene 群の役割が消えないように、各 scene の turn を本文に反映する
 
 ## 出力フォーマット
 
@@ -31,11 +34,16 @@
 
 ## メタ情報
 
-- 文字数: XXX字
-- 前話: [前話タイトル]
-- 次話への引き: [要約]
+- packet: packet-001-<slug>
+- episode: ep01
+- source scenes:
+  - scenes/drafted/scene-ep01-01-<slug>.md
+  - scenes/drafted/scene-ep01-02-<slug>.md
+- draft status: drafted
+- unresolved notes:
+  - 
 ```
 
 ## 保存先
 
-`drafts/draft_YYYYMMDD_HHMMSS.md`
+`drafts/draft_epXX_YYYYMMDD_HHMMSS.md`

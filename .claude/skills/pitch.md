@@ -1,34 +1,46 @@
 # /pitch
 
-次話のアイデアを複数提案する。
+Seed-first で次の着想や packet 材料を作る。
+
+## 入力
+
+- raw notes または「次に何を考えるか」という自然言語指示
+- 必要に応じて `story/seeds/`, `story/promises.md`, `bible/`, `arcs/`, `packets/`
 
 ## 手順
 
-1. `approved/` の公開済み原稿を読み、現在の進行状況を把握する
-2. `arcs/` のプロットを確認し、今後の展開を把握する
-3. `bible/` の設定資料を参照する
-4. 次話の候補を6つ提案する
+1. `story/promises.md`, `bible/`, `arcs/`, 直近の `packets/` を読んで現在地を把握する
+2. まだ行き先未定なら `story/seeds/` に seed を作る
+3. 既存 seed を束ねられるなら、`promises / bible / arc / packet` のどこへ送るべきかを示す
+4. `backlog/` ではなく `story/seeds/` を入口正本として扱う
 
 ## 出力フォーマット
 
-各候補には以下を含める:
+seed を作る場合は以下:
 
 ```markdown
-## 候補 N: [仮タイトル]
+# Seed: [一言タイトル]
 
-### あらすじ
-[100-200字]
+## 思いつき
+- 何が浮かんだか:
+- どの感情がいいと思ったか:
+- どの絵が見えたか:
 
-### 見どころ
-[この話で読者に伝えたいこと]
+## まだ荒い仮説
+- 主人公:
+- 対立:
+- 舞台:
+- フック:
 
-### キャラクター
-[主に登場するキャラクター]
+## 関連しそうな先
+- related arcs:
+- related packets:
+- promote to: macro | meso | 未決定
 
-### アーク上の位置づけ
-[全体の物語におけるこの話の役割]
+## 未決定
+- 
 ```
 
 ## 保存先
 
-`backlog/pitch_YYYYMMDD_HHMMSS.md`
+`story/seeds/seed-YYYYMMDD-HHMMSS.md`
